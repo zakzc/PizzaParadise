@@ -5,14 +5,10 @@ import CustomButton from "./custom/customButton";
 import Logo from "./views/logo";
 
 const WelcomeScreen = ({ navigation }) => {
-  const handlePress = () => {
-    console.log("text was pressed");
-  };
-
   return (
     <ImageBackground
       style={styles.backgroundImage}
-      source={require("../assets/pizzaBackground.jpg")}
+      source={require("../assets/images/pizzaBackground.jpg")}
     >
       <View style={styles.logoTextArea}>
         <Logo />
@@ -49,14 +45,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logInButton: {
-    margin: 20,
+    // margin: 20,
   },
   logoImage: {
     width: 90,
     height: 90,
   },
   menuButton: {
-    margin: 20,
+    // margin: 20,
   },
 });
 

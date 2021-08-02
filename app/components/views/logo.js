@@ -9,11 +9,11 @@ export default function Logo(props) {
       <View style={styles.container}>
         <Image
           style={styles.logoImage}
-          source={require("../../assets/pizza.png")}
+          source={require("../../assets/images/pizza.png")}
         />
       </View>
       <View style={styles.logoText}>
-        <CustomText numberOfLines={1}> It's pizza time! </CustomText>
+        <CustomText> Pizzeria Paradiso </CustomText>
       </View>
     </>
   );
@@ -39,5 +39,6 @@ const styles = StyleSheet.create({
   logoText: {
     justifyContent: "center",
     alignItems: "center",
+    fontFamily: "",
   },
 });

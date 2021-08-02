@@ -7,7 +7,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 // config
 // import colors from "../../config/colors";
 // comps
-import MenuCard from "./menuCard";
+import MenuCard from "./Menu/menuCard";
 // custom
 import CustomButton from "./custom/customButton";
 import CustomText from "./custom/customText";

@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 // custom comps
-import CustomText from "./custom/customText";
+import CustomText from "../custom/customText";
 // custom
 //import colors from "../../config/colors";
 
-const MenuCard = ({ cardHeading, cardText, swipeAction }) => {
+const MenuCard = ({ cardHeading, cardText, swipeAction, imageURI }) => {
   return (
     <Swipeable renderRightActions={swipeAction}>
       <TouchableHighlight
@@ -24,11 +24,7 @@ const MenuCard = ({ cardHeading, cardText, swipeAction }) => {
           <Image
             style={styles.imageStyle}
             // resizeMode="contain"
-            source={{
-              width: 200,
-              height: 300,
-              uri: "https://picsum.photos/300/200",
-            }}
+            source={imageURI}
           />
           <CustomText numberOfLines={1} style={styles.customHeadingStyle}>
             {cardHeading}

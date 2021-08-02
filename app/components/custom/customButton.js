@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
   customButtonStyle: {
     alignItems: "center",
     borderRadius: 15,
-    height: "35%",
+    height: 35,
     justifyContent: "center",
     margin: 12,
-    width: "100%",
+    width: 120,
   },
   customTextStyle: {
     color: "white",

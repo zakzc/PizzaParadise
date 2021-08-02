@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // comps/nav
-import MenuCard from "../menuCard";
+import MenuCard from "../Menu/menuCard";
 import MenuList from "../Menu/menuList";
 import AccountScreen from "../accountScreen";
 // custom
@@ -16,7 +16,7 @@ const TabNav = createBottomTabNavigator();
 
 export default function AppNavigator() {
   return (
-    <TabNav.Navigator>
+    <TabNav.Navigator initialRouteName="Menu">
       <TabNav.Screen
         name="Account"
         component={AccountScreen}

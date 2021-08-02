@@ -10,6 +10,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import WelcomeScreen from "./app/components/WelcomeScreen";
 import IconComp from "./app/components/views/iconComp";
 import LoginScreen from "./app/components/auth/logInScreen";
+import RegistrationScreen from "./app/components/auth/registration";
+import AuthNavigation from "./app/components/auth/authNavigation";
+// nav
 import AppNavigator from "./app/components/navigation/appNavigator";
 
 export default function App() {
@@ -18,18 +21,18 @@ export default function App() {
   const AppNav = () => (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         headerStyle: { backgroundColor: "tomato" },
       }}
     >
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
-      <Stack.Screen name="Log in" component={LoginScreen} />
+      <Stack.Screen name="Log in" component={AuthNavigation} />
       <Stack.Screen name="App navigation" component={AppNavigator} />
     </Stack.Navigator>
   );
 
   return (
-    <CustomView style={{ backgroundColor: "ivory" }}>
+    <CustomView>
       <NavigationContainer theme={navigationTheme}>
         <AppNav />
       </NavigationContainer>

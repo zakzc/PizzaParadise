@@ -2,8 +2,8 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import * as Yup from "yup";
 // custom
-import Logo from "./views/logo";
-import { CustomForm, CustomFormField, SubmitButton } from "./CustomForm";
+import Logo from "../views/logo";
+import { CustomForm, CustomFormField, SubmitButton } from "../CustomForm";
 
 const validationSchema = Yup.object().shape({
   userEmail: Yup.string().required().email().label("Email"),
@@ -20,6 +20,13 @@ export default function RegistrationScreen() {
           onSubmit={(values) => console.log("values: ", values)}
           validationSchema={validationSchema}
         >
+          <CustomFormField
+            autoCorrect={false}
+            icon={"email"}
+            name={"userName"}
+            placeholder={"Name"}
+            textContentType="name"
+          />
           <CustomFormField
             autoCapitalize="none"
             autoCorrect={false}
@@ -38,7 +45,7 @@ export default function RegistrationScreen() {
             secureTextEntry={true}
             textContentType="password"
           />
-          <SubmitButton title="Log in" />
+          <SubmitButton title="Register" />
         </CustomForm>
       </View>
     </View>
