@@ -14,7 +14,7 @@ import CustomText from "../custom/customText";
 
 const MenuCard = ({ cardHeading, cardText, swipeAction, imageURI }) => {
   return (
-    <Swipeable renderRightActions={swipeAction}>
+    <Swipeable renderRightActions={swipeAction} style={{ flex: 1 }}>
       <TouchableHighlight
         activeOpacity={0.6}
         underlayColor="#DDDDDD"
@@ -52,5 +52,5 @@ const styles = StyleSheet.create({
   customTextStyle: {
     color: "black",
   },
-  imageStyle: { height: "75%", width: "75%" },
+  imageStyle: { height: "75%", width: "75%", borderRadius: 25 },
 });

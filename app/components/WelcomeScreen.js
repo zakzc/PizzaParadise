@@ -15,8 +15,8 @@ const WelcomeScreen = ({ navigation }) => {
         <View style={styles.entryButtons}>
           <View style={styles.logInButton}>
             <CustomButton
-              title={"Log in"}
-              onPress={() => navigation.navigate("Log in")}
+              title={"Enter app"}
+              onPress={() => navigation.navigate("Credentials")}
             />
           </View>
           <View style={styles.menuButton}>

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { FlatList, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 // comps
 import MenuCard from "./menuCard";
 import Separator from "../views/separator";
@@ -48,24 +53,25 @@ const initialMessages = [
 
 const MenuList = ({ onPress }) => {
   const [messages, setMessages] = useState(initialMessages);
-  const [refreshPage, setRefreshPage] = useState(false);
+  // const [refreshPage, setRefreshPage] = useState(false);
 
   const handleDelete = (item) => {
     console.log("Item: ", item);
     setMessages(messages.filter((m) => m.id !== item.id));
   };
 
-  return (
+  const ListMenu = () => (
     <FlatList
       style={styles.listStyle}
       data={messages}
       keyExtractor={(message) => message.id.toString()}
+      ListFooterComponent={<View style={{ height: 20 }} />}
       ItemSeparatorComponent={Separator}
-      refreshing={refreshPage}
-      onRefresh={() => {
-        setMessages(initialMessages);
-        setRefreshPage(false);
-      }}
+      // refreshing={refreshPage}
+      // onRefresh={() => {
+      //   setMessages(initialMessages);
+      //   setRefreshPage(false);
+      // }}
       renderItem={({ item }) => (
         <MenuCard
           cardHeading={item.title}
@@ -87,12 +93,22 @@ const MenuList = ({ onPress }) => {
       )}
     />
   );
+
+  return (
+    <View style={styles.container}>
+      <ListMenu />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
+  container: { flex: 1 },
   listStyle: {
     backgroundColor: "#f3f3f3",
-    // padding: 5,
+    padding: 5,
+    flex: 1,
+    // flexGrow: 1,
+    marginBottom: 10,
   },
 });
 

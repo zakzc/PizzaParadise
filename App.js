@@ -22,18 +22,18 @@ export default function App() {
     <Stack.Navigator
       screenOptions={{
         headerShown: true,
-        headerStyle: { backgroundColor: "tomato" },
+        headerStyle: { backgroundColor: "#f3f3f3" },
       }}
     >
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
-      <Stack.Screen name="Log in" component={AuthNavigation} />
+      <Stack.Screen name="Credentials" component={AuthNavigation} />
       <Stack.Screen name="App navigation" component={AppNavigator} />
     </Stack.Navigator>
   );
 
   return (
     <CustomView>
-      <NavigationContainer theme={navigationTheme}>
+      <NavigationContainer theme={navigationTheme} style={{ flex: 1 }}>
         <AppNav />
       </NavigationContainer>
     </CustomView>
