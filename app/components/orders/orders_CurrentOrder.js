@@ -1,38 +1,33 @@
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 // comps
 import IconComp from "../views/iconComp";
-import ListItems from "../listItems";
+import ListItems from "../custom/listItems";
 import Separator from "../views/separator";
+import CustomView from "../custom/customView";
 
 const menuItems = [
   {
-    title: "my lists",
-    icon: { name: "format-list-bulleted", backgroundColor: "orange" },
+    title: "20",
+    subTitle: "Pepperoni pizza",
+    icon: { name: "pizza", backgroundColor: "red" },
   },
   {
-    title: "my messages",
-    icon: { name: "format-list-bulleted", backgroundColor: "green" },
+    title: "30",
+    subTitle: "Four cheese",
+    icon: { name: "pizza", backgroundColor: "orange" },
+  },
+  {
+    title: "3",
+    subTitle: "Cola zero",
+    icon: { name: "bottle-soda-classic-outline", backgroundColor: "black" },
   },
 ];
 
 export default function CurrentOrder(props) {
   return (
-    <View style={styles.container}>
-      <View>
-        <ListItems
-          listHeading={"head"}
-          listText={"toe"}
-          ImageComponent={
-            <IconComp
-              iconName={"alert-outline"}
-              size={40}
-              backgroundColor={"brown"}
-              iconColor={"white"}
-            />
-          }
-        />
-      </View>
+    <CustomView style={styles.orderContainer}>
+      <Text style={styles.heading}>Current Order</Text>
       <View style={styles.listArea}>
         <FlatList
           data={menuItems}
@@ -41,6 +36,7 @@ export default function CurrentOrder(props) {
           renderItem={({ item }) => (
             <ListItems
               listHeading={item.title}
+              listText={item.subTitle}
               ImageComponent={
                 <IconComp
                   iconName={item.icon.name}
@@ -52,15 +48,22 @@ export default function CurrentOrder(props) {
           )}
         />
       </View>
-    </View>
+    </CustomView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { margin: 10, backgroundColor: "aliceblue" },
+  orderContainer: { margin: 10, backgroundColor: "aliceblue" },
   listArea: {
     marginTop: 5,
     marginBottom: 5,
     backgroundColor: "white",
+  },
+  heading: {
+    fontWeight: "bold",
+    marginTop: 10,
+    marginBottom: 10,
+    fontSize: 30,
+    color: "tomato",
   },
 });

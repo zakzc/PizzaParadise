@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StyleSheet } from "react-native";
 import "react-native-gesture-handler";
 // custom
 import CustomView from "./app/components/custom/customView";
@@ -8,9 +9,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 // navigation comps
 import WelcomeScreen from "./app/components/WelcomeScreen";
-import IconComp from "./app/components/views/iconComp";
-import LoginScreen from "./app/components/auth/logInScreen";
-import RegistrationScreen from "./app/components/auth/registration";
+// import IconComp from "./app/components/views/iconComp";
+// import LoginScreen from "./app/components/auth/logInScreen";
+// import RegistrationScreen from "./app/components/auth/registration";
 import AuthNavigation from "./app/components/auth/authNavigation";
 // nav
 import AppNavigator from "./app/components/navigation/appNavigator";
@@ -21,7 +22,8 @@ export default function App() {
   const AppNav = () => (
     <Stack.Navigator
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
+        // headerTitle: false,
         headerStyle: { backgroundColor: "#f3f3f3" },
       }}
     >
@@ -32,10 +34,16 @@ export default function App() {
   );
 
   return (
-    <CustomView>
-      <NavigationContainer theme={navigationTheme} style={{ flex: 1 }}>
-        <AppNav />
-      </NavigationContainer>
-    </CustomView>
+    // <CustomView>
+    <NavigationContainer theme={navigationTheme} style={styles.container}>
+      <AppNav />
+    </NavigationContainer>
+    //</CustomView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+  },
+});

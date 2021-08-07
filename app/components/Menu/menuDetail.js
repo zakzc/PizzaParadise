@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Text, View, StyleSheet } from "react-native";
 // comps
-import CustomText from "./custom/customText";
+import CustomText from "../custom/customText";
 
 const MenuDetail = () => {
   return (

@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 // custom comps
-import CustomText from "./custom/customText";
+import CustomText from "./customText";
 // icons
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { green } from "ansi-colors";

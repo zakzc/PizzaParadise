@@ -1,7 +1,6 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import Constants from "expo-constants";
-import { greaterThan } from "react-native-reanimated";
 
 const CustomView = ({ children, style }) => {
   return (

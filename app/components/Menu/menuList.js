@@ -9,6 +9,8 @@ import {
 import MenuCard from "./menuCard";
 import Separator from "../views/separator";
 import SwipeView from "../views/swipeView";
+// custom
+import CustomView from "../custom/customView";
 // ui
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 // photos
@@ -95,14 +97,14 @@ const MenuList = ({ onPress }) => {
   );
 
   return (
-    <View style={styles.container}>
+    <CustomView style={styles.listMenuContainer}>
       <ListMenu />
-    </View>
+    </CustomView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  listMenuContainer: { flex: 1, backgroundColor: "#f3f3f3" },
   listStyle: {
     backgroundColor: "#f3f3f3",
     padding: 5,

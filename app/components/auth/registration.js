@@ -4,6 +4,7 @@ import * as Yup from "yup";
 // custom
 import Logo from "../views/logo";
 import { CustomForm, CustomFormField, SubmitButton } from "../CustomForm";
+import CustomView from "../custom/customView";
 
 const validationSchema = Yup.object().shape({
   userEmail: Yup.string().required().email().label("Email"),
@@ -12,7 +13,7 @@ const validationSchema = Yup.object().shape({
 
 export default function RegistrationScreen() {
   return (
-    <View style={styles.container}>
+    <CustomView style={styles.registrationContainer}>
       <Logo />
       <View>
         <CustomForm
@@ -48,10 +49,10 @@ export default function RegistrationScreen() {
           <SubmitButton title="Register" />
         </CustomForm>
       </View>
-    </View>
+    </CustomView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, marginTop: 25 },
+  registrationContainer: { flex: 1, marginTop: 25 },
 });

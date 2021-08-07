@@ -1,32 +1,37 @@
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 // comps
-
-import IconComp from "./views/iconComp";
-import ListItems from "./listItems";
-import Separator from "./views/separator";
+import IconComp from "../views/iconComp";
+import ListItems from "../custom/listItems";
+import Separator from "../views/separator";
+// custom
+import CustomButton from "../custom/customButton";
+// ui
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { white } from "ansi-colors";
+import CustomView from "../custom/customView";
 
 const menuItems = [
   {
-    title: "my lists",
+    title: "My Previous Orders",
     icon: { name: "format-list-bulleted", backgroundColor: "orange" },
   },
   {
-    title: "my messages",
+    title: "My Data",
     icon: { name: "format-list-bulleted", backgroundColor: "green" },
   },
 ];
 
 export default function AccountScreen(props) {
   return (
-    <View style={styles.container}>
+    <CustomView style={styles.accountContainer}>
       <View>
         <ListItems
-          listHeading={"head"}
-          listText={"toe"}
+          listHeading={"John Smith"}
+          listText={"Data"}
           ImageComponent={
             <IconComp
-              iconName={"alert-outline"}
+              iconName={"account"}
               size={40}
               backgroundColor={"brown"}
               iconColor={"white"}
@@ -53,15 +58,32 @@ export default function AccountScreen(props) {
           )}
         />
       </View>
-    </View>
+      <View style={styles.buttonPositioning}>
+        <CustomButton
+          title={
+            <MaterialCommunityIcons name={"logout"} color={"white"} size={30} />
+          }
+          onPress={() => {
+            console.log("pressed Log out");
+          }}
+        />
+      </View>
+    </CustomView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { margin: 10, backgroundColor: "aliceblue" },
+  accountContainer: { margin: 10, backgroundColor: "aliceblue" },
   listArea: {
     marginTop: 5,
     marginBottom: 5,
     backgroundColor: "white",
+  },
+  buttonPositioning: {
+    top: 50,
+    width: "100%",
+    flexDirection: "row",
+    textAlign: "center",
+    justifyContent: "center",
   },
 });

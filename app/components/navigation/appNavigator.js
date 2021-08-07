@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // comps/nav
 import MenuCard from "../Menu/menuCard";
 import MenuList from "../Menu/menuList";
-import AccountScreen from "../accountScreen";
+import AccountScreen from "../account/accountScreen";
 // custom
 import MenuButton from "./menuButton";
 // icons
